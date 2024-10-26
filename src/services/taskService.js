@@ -1,7 +1,7 @@
 // frontend/src/services/taskService.js
 import axios from "axios";
 
-const API_URL = "https://taskmanager-on7e.onrender.com";
+const API_URL = "http://localhost:5003/api/tasks";
 
 // Fetch all tasks
 const getTasks = async () => {
