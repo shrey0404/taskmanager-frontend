@@ -1,0 +1,134 @@
+/* frontend/src/styles.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.App {
+    max-width: 1300px; /* Wider max width for better layout */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.App.dark {
+    background: #303f3f; /* Dark background */
+    color: #e0f7fa; /* Light text color */
+}
+
+h1 {
+    text-align: center;
+    color: #8b8fd4;
+}
+
+.toggle-theme {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #898de7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-theme:hover {
+    background-color: #004d40;
+}
+
+.task-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #1C25C1;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.task-form input,
+.task-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #1C25C1;
+    border-radius: 4px;
+}
+
+.task-list {
+    margin-top: 20px;
+    display: grid; /* Change to grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Gap between items */
+}
+
+.task-item {
+    padding: 15px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.task-item.pending {
+    background: rgba(220, 240, 220, 0.8); /* Light green for pending tasks */
+}
+
+.task-item.completed {
+    background: rgba(240, 220, 220, 0.8); /* Light red for completed tasks */
+    text-decoration: line-through;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #1C25C1;
+    color: white;
+}
+
+/* Dark mode specific styles for task items */
+.App.dark .task-item {
+    background: #37474f; /* Dark background for task items */
+    color: #e0f7fa; /* Light text color for visibility */
+}
+
+.App.dark .task-item.pending {
+    background: rgba(80, 200, 120, 0.8); /* Darker green for pending tasks */
+}
+
+.App.dark .task-item.completed {
+    background: rgba(240, 220, 220, 0.8); /* Light red for completed tasks in dark mode */
+}
+
+/* Example media query for tablets and smaller screens */
+@media (max-width: 768px) {
+    .task-list {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .task-item {
+        margin: 5px 0; /* Reduce margin on smaller screens */
+    }
+}
+
+
